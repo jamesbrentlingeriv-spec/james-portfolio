@@ -154,7 +154,7 @@ export default function GlobalMusicPlayer() {
       </AnimatePresence>
 
       {/* 2. FLOATING CAPSULE BAR (COLLAPSED STATE) */}
-      <div className="glassmorphic rounded-full py-3 px-5 border border-border flex items-center gap-3 shadow-lg select-none">
+      <div className="bg-card border border-border rounded-full py-3 px-5 flex items-center gap-3 shadow-lg select-none">
         
         {/* Play/Pause Trigger */}
         <button

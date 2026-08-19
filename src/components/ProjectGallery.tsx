@@ -24,33 +24,23 @@ export default function ProjectGallery() {
     switch (category) {
       case 'Android App':
         return {
-          icon: <Smartphone className="w-4 h-4 text-accent" />,
-          bg: 'bg-accent/10',
-          border: 'border-border hover:border-accent/30'
+          icon: <Smartphone className="w-4 h-4 text-white" />,
         };
       case 'PWA':
         return {
-          icon: <Layers className="w-4 h-4 text-accent" />,
-          bg: 'bg-accent/10',
-          border: 'border-border hover:border-accent/30'
+          icon: <Layers className="w-4 h-4 text-white" />,
         };
       case 'Windows App':
         return {
-          icon: <Laptop className="w-4 h-4 text-accent" />,
-          bg: 'bg-accent/10',
-          border: 'border-border hover:border-accent/30'
+          icon: <Laptop className="w-4 h-4 text-white" />,
         };
       case 'Book':
         return {
-          icon: <BookOpen className="w-4 h-4 text-accent" />,
-          bg: 'bg-accent/10',
-          border: 'border-border hover:border-accent/30'
+          icon: <BookOpen className="w-4 h-4 text-white" />,
         };
       case 'Website':
         return {
-          icon: <Globe className="w-4 h-4 text-accent" />,
-          bg: 'bg-accent/10',
-          border: 'border-border hover:border-accent/30'
+          icon: <Globe className="w-4 h-4 text-white" />,
         };
     }
   };
@@ -80,7 +70,7 @@ export default function ProjectGallery() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-accent text-white'
-                  : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                  : 'bg-black text-white dark:bg-muted dark:text-foreground hover:bg-black/80 dark:hover:bg-muted/80'
               }`}
             >
               {cat}
@@ -112,7 +102,7 @@ export default function ProjectGallery() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     {/* Category icon and text */}
-                    <div className={`px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 ${styles.bg} text-accent`}>
+                    <div className="px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 bg-accent text-white">
                       {styles.icon}
                       {project.category}
                     </div>
@@ -148,12 +138,12 @@ export default function ProjectGallery() {
                   {/* Built with previews */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.tech.slice(0, 3).map((tag) => (
-                      <span key={tag} className="text-xs px-2 py-1 rounded-md bg-muted text-muted-foreground font-medium">
+                      <span key={tag} className="text-xs px-2 py-1 rounded-md bg-accent text-white font-medium">
                         {tag}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="text-xs px-2 py-1 rounded-md bg-muted text-muted-foreground font-medium">
+                      <span className="text-xs px-2 py-1 rounded-md bg-accent text-white font-medium">
                         +{project.tech.length - 3}
                       </span>
                     )}

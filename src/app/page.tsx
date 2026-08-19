@@ -56,6 +56,7 @@ export default function PortfolioHome() {
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors hidden md:inline-block">About</a>
             <a href="#skills" className="text-muted-foreground hover:text-foreground transition-colors hidden md:inline-block">Skills</a>
             <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">Projects</a>
+            <a href="/wood" className="text-muted-foreground hover:text-foreground transition-colors">Wood</a>
             
             <button
               onClick={toggleTheme}
@@ -74,44 +75,64 @@ export default function PortfolioHome() {
 
       {/* 2. HERO SECTION - Clean & Professional */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="w-4 h-4" />
-            <span>Available for freelance work</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-            Developer, Author,<br />
-            <span className="text-accent">and Musician</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            I build precision engineering tools, craft speculative fiction, and compose synthwave music. 
-            Blending systems-level C++ expertise with creative expression.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Hero Text - Left Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-left max-w-xl"
+          >
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="w-4 h-4" />
+              <span>Available for freelance work</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+              Developer, Author,<br />
+              <span className="text-accent">and Musician</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              I build precision engineering tools, craft speculative fiction, and compose synthwave music. 
+              Blending systems-level C++ expertise with creative expression.
+            </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a 
-              href="#projects" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors font-medium"
-            >
-              View Projects
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a 
-              href="mailto:james@iamjames.lol" 
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:bg-accent/5 transition-colors font-medium"
-            >
-              <Mail className="w-4 h-4" />
-              Get in Touch
-            </a>
-          </div>
-        </motion.div>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <a 
+                href="#projects" 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors font-medium"
+              >
+                View Projects
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a 
+                href="mailto:james@iamjames.lol" 
+                className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:bg-accent/5 transition-colors font-medium"
+              >
+                <Mail className="w-4 h-4" />
+                Get in Touch
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Hero Image - Right Column */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hidden md:flex justify-end"
+          >
+            <div className="w-full max-w-md h-[600px] opacity-60 dark:opacity-30">
+              <img 
+                src="/portrait.png" 
+                alt="James Brentlinger" 
+                className="w-full h-full object-cover object-right brightness-75 dark:brightness-100"
+                style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)' }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* 3. ABOUT ME SECTION - Clean & Professional */}
